@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+alias k=kubectl
+alias b=bazelisk
+alias g=git
