@@ -9,9 +9,8 @@ PROMPT='%F{208}%n%f in %F{226}%~%f -> '
 # colors in tmux
 [[ $TMUX != "" ]] && export TERM="xterm-256color"
 
-# line movement
-bindkey  "\e^A" beginning-of-line
-bindkey  "\e^E" end-of-line
+# use emacs keybinds
+bindkey -e
 
 # ctrl-left/right
 bindkey "\e[1;5C" forward-word
