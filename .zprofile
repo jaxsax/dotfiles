@@ -2,7 +2,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
-for file in ~/.{aliases}; do
+for file in ~/.{aliases,path}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done
 
