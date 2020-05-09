@@ -7,4 +7,5 @@ pacman -Sy \
     mtr \
     vim \
     tcpdump \
-    tmux
+    tmux \
+    fzf

@@ -40,3 +40,9 @@ path=(
     $path)
 
 export PATH
+
+# fzf setup
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
