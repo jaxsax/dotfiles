@@ -36,6 +36,7 @@ path=(
     "$HOME/.local/bin"
     "$HOME/go/bin"
     "$HOME/.yarn/bin"
+    "/usr/local/go/bin"
     $path)
 
 export PATH
