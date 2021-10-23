@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -xe
+
+pushd $HOME/.dotfiles
+STOW_FOLDERS="nvim"
+for folder in $STOW_FOLDERS; do
+	stow -D $folder
+done
