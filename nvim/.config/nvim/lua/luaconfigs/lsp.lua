@@ -27,16 +27,6 @@ end
 
 require'lspconfig'.tsserver.setup(config())
 require'lspconfig'.svelte.setup(config())
-require'lspconfig'.gopls.setup(config({
-  capabilities = {
-    textDocument = {
-	    completion = {
-		    completionItem = {
-			    snippetSupport = true
-		    }
-	    }
-    }
-  },
-}))
+require'lspconfig'.gopls.setup(config())
 
 vim.lsp.set_log_level("debug")
