@@ -21,3 +21,10 @@ fh() {
 }
 zle -N fzf-history fh
 bindkey ^r fzf-history
+
+unameS="$(uname -s)"
+case "$unameS" in
+	Linux*)
+		bindkey "^[[1;3C" forward-word
+		bindkey "^[[1;3D" backward-word
+esac

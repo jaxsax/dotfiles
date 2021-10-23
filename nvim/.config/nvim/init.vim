@@ -29,7 +29,7 @@ Plug 'mhinz/vim-signify'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
+Plug 'natecraddock/nvim-find'
 
 call plug#end()
 
@@ -75,6 +75,8 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 local lsp_default_config = {capabilites = capabilities}
 local servers = {
+	tsserver = {},
+	svelte = {},
         gopls = {
 		cmd = {'gopls'},
                 capabilties = {
@@ -107,6 +109,19 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 vim.lsp.set_log_level("debug")
 EOF
+
+lua << EOF
+local cfg = require'nvim-find.config'
+
+cfg.files.ignore = {
+  "*node_modules*",
+  "*.pyc",
+  "bin/*"
+}
+
+EOF
+
+nnoremap <silent> <c-f> :lua require("nvim-find.defaults").files()<cr>
 
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 
