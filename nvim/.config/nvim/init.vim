@@ -9,9 +9,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-" Nice menu when typing `:find *.py`
-set wildmode=longest,list,full
-set wildmenu
 " Ignore files
 set wildignore+=*.pyc
 set wildignore+=*_build/*
@@ -24,6 +21,8 @@ call plug#begin('~/.vim/plugged')
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+
+Plug 'mhinz/vim-rfc'
 
 Plug 'neovim/nvim-lspconfig'
 
@@ -38,6 +37,9 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set updatetime=100
+set number
+set ignorecase
+set smartcase
 
 let mapleader = " "
 colorscheme gruvbox
