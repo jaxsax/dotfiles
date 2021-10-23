@@ -24,6 +24,10 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Shougo/context_filetype.vim'
+Plug 'sbdchd/neoformat'
 
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
@@ -53,22 +57,14 @@ let mapleader = " "
 colorscheme gruvbox
 set background=dark
 
-nnoremap <C-p> :GFiles<CR>
 
 lua require("luaconfigs")
 
-lua << EOF
-local cfg = require'nvim-find.config'
-
-cfg.files.ignore = {
-  "*node_modules*",
-  "*.pyc",
-  "bin/*"
-}
-
-EOF
-
 nnoremap <silent> <M-f> :lua require("nvim-find.defaults").files()<cr>
 
-autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
-
+augroup fmt
+    autocmd!
+    autocmd BufWritePre *.lua,*.css,*.html,*.js,*.json undojoin | Neoformat
+    autocmd BufWritePre *.go,*.svelte,*.ts lua vim.lsp.buf.formatting()
+    autocmd BufWritePre * %s/\s\+$//e
+augroup END
