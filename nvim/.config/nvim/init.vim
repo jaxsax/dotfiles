@@ -21,6 +21,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'L3MON4D3/LuaSnip'
+
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
@@ -52,63 +55,7 @@ set background=dark
 
 nnoremap <C-p> :GFiles<CR>
 
-lua << EOF
-local lsp_config = require'lspconfig'
-local cmp = require'cmp'
-
-cmp.setup({
-  mapping = {
-	  ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-	  ['<C-f>'] = cmp.mapping.scroll_docs(4),
-	  ['<C-Space>'] = cmp.mapping.complete(),
-	  ['<C-e>'] = cmp.mapping.close(),
-	  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-  }, {
-    { name = 'buffer' },
-  })
-})
-
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local lsp_default_config = {capabilites = capabilities}
-local servers = {
-	tsserver = {},
-	svelte = {},
-        gopls = {
-		cmd = {'gopls'},
-                capabilties = {
-                        textDocuemnt = {
-                                completion = {
-                                        completionItem = {
-                                                snippetSupport = true
-                                        }
-                                }
-                        }
-                },
-                init_options = {
-                        usePlaceholders = true,
-                        completeUnimported = true
-                }
-        }
-}
-
-for server, config in pairs(servers) do
-        lsp_config[server].setup(vim.tbl_deep_extend('force', lsp_default_config, config))
-end
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics, {
-                underline = true,
-                signs = false,
-                update_in_insert = true
-        }
-)
-
-vim.lsp.set_log_level("debug")
-EOF
+lua require("luaconfigs")
 
 lua << EOF
 local cfg = require'nvim-find.config'
@@ -121,7 +68,7 @@ cfg.files.ignore = {
 
 EOF
 
-nnoremap <silent> <c-f> :lua require("nvim-find.defaults").files()<cr>
+nnoremap <silent> <M-f> :lua require("nvim-find.defaults").files()<cr>
 
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 
