@@ -1,0 +1,9 @@
+export EDITOR=nvim
+
+alias vim=nvim
+alias ls="ls --color=auto"
+alias k=kubectl
+alias b=bazelisk
+alias g=git
+alias gp="git push"
+alias gpf="git push --force-with-lease"

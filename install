@@ -3,7 +3,7 @@
 set -xe
 
 pushd $HOME/.dotfiles
-STOW_FOLDERS="nvim"
+STOW_FOLDERS="nvim zsh personal"
 for folder in $STOW_FOLDERS; do
 	stow -D $folder
 	stow $folder
