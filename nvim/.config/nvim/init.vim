@@ -56,7 +56,7 @@ set background=dark
 
 lua require("luaconfigs")
 
-nnoremap <silent> <c-p> <cmd>Telescope find_files<cr>
+nnoremap <silent> <c-p> :lua require('luaconfigs.telescope').project_files()<cr>
 nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
 " nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
 " nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
