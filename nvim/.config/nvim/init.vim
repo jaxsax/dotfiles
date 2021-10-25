@@ -48,7 +48,7 @@ set number
 set ignorecase
 set smartcase
 set completeopt=menu,menuone,noselect
-set signcolumn=number
+set signcolumn=yes
 
 let mapleader = " "
 colorscheme gruvbox
