@@ -27,22 +27,12 @@ end
 
 require'lspconfig'.tsserver.setup(config())
 require'lspconfig'.svelte.setup(config())
-require'lspconfig'.gopls.setup(config())
--- require'lspconfig'.gopls.setup(config({
--- 	capabilties = {
--- 		textDocument = {
--- 			completion = {
--- 				completionItem = {
--- 					snippetSupport = true
--- 				}
--- 			}
--- 		}
--- 	},
--- 	init_options = {
--- 		usePlaceholders = true,
--- 		completeUnimported = true
--- 	}
--- }))
+require'lspconfig'.gopls.setup(config({
+	init_options = {
+		usePlaceholders = true,
+		completeUnimported = true,
+	}
+}))
 
 -- You need this otherwise the diagnostics doesn't clear for some reason
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
