@@ -54,25 +54,18 @@ set noswapfile
 set nobackup
 set termguicolors
 set colorcolumn=120
+set incsearch
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
 
 let mapleader = " "
+let g:signify_realtime = 1
 colorscheme gruvbox
 set background=dark
 
 lua require("luaconfigs")
-
-nnoremap <silent> <c-p> :lua require('luaconfigs.telescope').project_files()<cr>
-nnoremap <silent> <c-g> :lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
-" nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
-" nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>rr :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>vrn :lua im.lsp.buf.rename()<CR>
-nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-" nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>ll :call LspLocationList()<CR>
+lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 augroup fmt
     autocmd!
