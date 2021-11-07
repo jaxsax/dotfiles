@@ -64,6 +64,9 @@ let g:signify_realtime = 1
 colorscheme gruvbox
 set background=dark
 
+nnoremap <silent> <c-p> :lua require('luaconfigs.telescope').project_files()<cr>
+nnoremap <silent> <c-g> :lua require('telescope.builtin').live_grep()<cr>
+
 lua require("luaconfigs")
 lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
