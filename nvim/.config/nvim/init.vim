@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+Plug 'windwp/nvim-autopairs'
 
 Plug 'mhinz/vim-rfc'
 
