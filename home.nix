@@ -30,7 +30,13 @@ in {
     # Don't really wanna do the workaround here so let's just not use it for now
     enable = false;
   };
-  programs.bash.shellAliases = { g = "git"; };
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      "g" = "git";
+      "l" = "ls -la";
+    };
+  };
   programs.tmux = {
     enable = true;
     escapeTime = 10;
