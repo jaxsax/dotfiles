@@ -3,7 +3,7 @@ let vimPlugsFromSource = import ./plugins.nix pkgs;
 in {
   home.username = "jaxsax";
   home.homeDirectory = "/home/jaxsax";
-  home.packages = with pkgs; [ nixfmt zsh ripgrep rnix-lsp ];
+  home.packages = with pkgs; [ nixfmt zsh ripgrep rnix-lsp tree-sitter ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
   programs.git = {
@@ -36,14 +36,23 @@ in {
       nvim-autopairs
       telescope-nvim
       nvim-lspconfig
-      nvim-treesitter
       nvim-compe
+      (nvim-treesitter.withPlugins(
+        plugins: with plugins; [
+          tree-sitter-python
+          tree-sitter-go
+          tree-sitter-bash
+          tree-sitter-json
+          tree-sitter-lua
+        ]))
       vimPlugsFromSource.nvim-popup
       vimPlugsFromSource.nvim-lsp-saga
       vimPlugsFromSource.gruvbox
     ];
     extraConfig = ''
       lua << EOF
+      ${builtins.readFile ./telescope.lua}
+      ${builtins.readFile ./treesitter.lua}
       ${builtins.readFile ./lsp.lua}
       EOF
 
