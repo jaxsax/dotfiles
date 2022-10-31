@@ -1,5 +1,7 @@
 require'lspconfig'.rnix.setup{}
 
+require'lspconfig'.gopls.setup{}
+
 require'lspconfig'.sumneko_lua.setup{
     cmd = {"lua-language-server"},
     settings = {

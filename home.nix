@@ -48,11 +48,12 @@ in {
       telescope-nvim
       nvim-lspconfig
       nvim-compe
+      lspkind-nvim
+      nvim-web-devicons
       (nvim-treesitter.withPlugins (plugins:
         with plugins; [
           tree-sitter-python
           tree-sitter-go
-          tree-sitter-bash
           tree-sitter-json
           tree-sitter-lua
         ]))
