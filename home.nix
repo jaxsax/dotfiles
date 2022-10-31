@@ -21,6 +21,7 @@ in {
       cm = "commit -v";
       ai = "add --interactive -p";
       pf = "push --force-with-lease";
+      cma = "commit --amend -v";
     };
     extraConfig = { core = { editor = "nvim"; }; };
   };
