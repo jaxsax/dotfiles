@@ -3,6 +3,10 @@ let vimPlugsFromSource = import ./plugins.nix pkgs;
 in {
   home.username = "jaxsax";
   home.homeDirectory = "/home/jaxsax";
+  home.shellAliases = {
+    "g" = "git";
+    "l" = "ls -la";
+  };
   home.packages = with pkgs; [
     nixfmt
     zsh
@@ -29,13 +33,6 @@ in {
     # https://github.com/NixOS/nix/issues/5445
     # Don't really wanna do the workaround here so let's just not use it for now
     enable = false;
-  };
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      "g" = "git";
-      "l" = "ls -la";
-    };
   };
   programs.tmux = {
     enable = true;
