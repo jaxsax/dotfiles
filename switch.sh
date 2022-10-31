@@ -1,1 +1,1 @@
-nix run . switch -- --flake .
+home-manager switch --flake .#jaxsax

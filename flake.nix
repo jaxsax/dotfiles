@@ -7,15 +7,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
-    defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
-    defaultPackage.x86_64-darwin = home-manager.defaultPackage.x86_64-darwin;
-
-    homeConfigurations = {
-      "jaxsax" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+  outputs = { self, home-manager, nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
+      homeConfigurations.jaxsax = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         modules = [ ./home.nix ];
       };
     };
-  };
 }
