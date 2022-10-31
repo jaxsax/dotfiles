@@ -8,10 +8,11 @@
     enable = true;
     userName = "jaxsax";
     userEmail = "jaxsax@users.noreply.github.com";
-    extraConfig = {
-      core = {
-        editor = "nvim";
-      };
+    aliases = {
+      cm = "commit -v";
+      ai = "add --interactive";
+      pf = "push --force-with-lease";
     };
+    extraConfig = { core = { editor = "nvim"; }; };
   };
 }
