@@ -34,6 +34,15 @@ in {
     # Don't really wanna do the workaround here so let's just not use it for now
     enable = false;
   };
+  programs.bash = {
+    enable = true;
+    profileExtra = ''
+      export LC_ALL="en_US.UTF-8"
+      export LANG="en_US.UTF-8"
+
+      export PATH="$HOME/.nix-profile/bin:$PATH"
+    '';
+  };
   programs.tmux = {
     enable = true;
     escapeTime = 10;
