@@ -28,6 +28,7 @@ in {
       ai = "add --interactive -p";
       pf = "push --force-with-lease";
       cma = "commit --amend -v";
+      co = "checkout";
     };
     extraConfig = { core = { editor = "nvim"; }; };
   };
