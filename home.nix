@@ -71,6 +71,7 @@ in {
       EOF
 
       colorscheme gruvbox
+      autocmd BufWritePre *.go :silent! lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
     '';
   };
 }
