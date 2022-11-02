@@ -22,6 +22,7 @@ in {
     userName = "jaxsax";
     userEmail = "jaxsax@users.noreply.github.com";
     aliases = {
+      st = "status";
       cm = "commit -v";
       ai = "add --interactive -p";
       pf = "push --force-with-lease";
@@ -42,6 +43,9 @@ in {
 
       export PATH="$HOME/.nix-profile/bin:$PATH"
     '';
+    sessionVariables = {
+      TERM = "xterm-256color";
+    };
   };
   programs.tmux = {
     enable = true;
