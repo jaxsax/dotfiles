@@ -5,6 +5,7 @@ in {
   home.homeDirectory = "/home/jaxsax";
   home.shellAliases = {
     "g" = "git";
+    "gp" = "git push";
     "l" = "ls -la";
   };
   home.packages = with pkgs; [
