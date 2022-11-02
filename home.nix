@@ -56,11 +56,13 @@ in {
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       vim-nix
-      nvim-autopairs
+      nvim-autopairs 
       telescope-nvim
       nvim-lspconfig
-      nvim-compe
-      lspkind-nvim
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp_luasnip
+      luasnip
       nvim-web-devicons
       (nvim-treesitter.withPlugins (plugins:
         with plugins; [
