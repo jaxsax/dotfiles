@@ -44,9 +44,7 @@ in {
 
       export PATH="$HOME/.nix-profile/bin:$PATH"
     '';
-    sessionVariables = {
-      TERM = "xterm-256color";
-    };
+    sessionVariables = { TERM = "xterm-256color"; };
   };
   programs.tmux = {
     enable = true;
