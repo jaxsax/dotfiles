@@ -2,6 +2,7 @@ vim.o.mouse = "a"
 -- vim.o.encoding = "UTF-8" -- redundant
 vim.o.cursorline = true
 vim.g.mapleader = " "
+vim.o.number = true
 
 -- More natural pane splitting
 vim.o.splitbelow = true
