@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 let vimPlugsFromSource = import ./plugins.nix pkgs;
-in {
+in
+{
   home.username = "jaxsax";
   home.homeDirectory = "/home/jaxsax";
   home.shellAliases = {
@@ -57,7 +58,7 @@ in {
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       vim-nix
-      nvim-autopairs 
+      nvim-autopairs
       telescope-nvim
       nvim-lspconfig
       nvim-cmp
@@ -83,10 +84,12 @@ in {
       ${builtins.readFile ./telescope.lua}
       ${builtins.readFile ./treesitter.lua}
       ${builtins.readFile ./lsp.lua}
+      vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+      -- autocmd BufWritePre *.go :silent! lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+      -- autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
       EOF
 
       colorscheme gruvbox
-      autocmd BufWritePre *.go :silent! lua vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
     '';
   };
 }
