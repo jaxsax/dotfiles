@@ -70,6 +70,7 @@ in
         with plugins; [
           tree-sitter-python
           tree-sitter-go
+          tree-sitter-rust
           tree-sitter-json
           tree-sitter-lua
         ]))
