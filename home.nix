@@ -8,6 +8,7 @@ in
     "g" = "git";
     "gp" = "git push";
     "l" = "ls -la";
+    "k" = "kubectl";
   };
   home.packages = with pkgs; [
     nixfmt
@@ -18,6 +19,7 @@ in
     sumneko-lua-language-server
     kind
     kubectl
+    direnv
   ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
