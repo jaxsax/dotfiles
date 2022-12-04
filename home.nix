@@ -50,6 +50,9 @@ in
 
       export PATH="$HOME/.nix-profile/bin:$PATH"
     '';
+    bashrcExtra = ''
+      eval "$(direnv hook bash)"
+    '';
     sessionVariables = { TERM = "xterm-256color"; };
   };
   programs.tmux = {
