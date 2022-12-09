@@ -7,6 +7,7 @@ in
   home.shellAliases = {
     "g" = "git";
     "gp" = "git push";
+    "gcm" = "git checkout master";
     "l" = "ls -la";
     "k" = "kubectl";
   };
