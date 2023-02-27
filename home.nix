@@ -80,6 +80,9 @@ in
           tree-sitter-go
           tree-sitter-rust
           tree-sitter-json
+          tree-sitter-svelte
+          tree-sitter-typescript
+          tree-sitter-html
           tree-sitter-lua
         ]))
       plenary-nvim
