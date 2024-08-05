@@ -1,0 +1,1 @@
+export STOW_PKGS="zsh,nvim,base,personal"

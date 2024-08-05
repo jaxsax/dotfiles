@@ -1,4 +1,9 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/.dotfiles
 export EDITOR=nvim
-export STOW_PKGS="zsh,nvim"
+
+PERSONAL=$XDG_CONFIG_HOME/personal
+source $PERSONAL/env
+for i in `find -L $PERSONAL`; do
+    source $i
+done

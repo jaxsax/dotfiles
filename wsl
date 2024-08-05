@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_PKGS ]]; then
-    STOW_PKGS="zsh"
+    STOW_PKGS="zsh,nvim,base"
 fi
 
 if [[ -z $DOTFILES ]]; then
