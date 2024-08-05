@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-sudo apt update
-sudo apt install -y fzf fd-find zsh tmux
+cat <<EOF > /tmp/install-pkgs.nix
+with import <nixpkgs>{}; [
+	ripgrep
+	fzf
+	zoxide
+	oh-my-posh
+]
+EOF
 
-if [ -e $HOME/n/ ]; then
-	# https://github.com/mklement0/n-install
-	curl -L https://git.io/n-install | bash
-fi
-
-GO111MODULE=on go get golang.org/x/tools/gopls@latest
-
-python -m pip install pynvim
+nix-env -if /tmp/install-pkgs.nix 

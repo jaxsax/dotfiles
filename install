@@ -2,9 +2,10 @@
 
 set -xe
 
-pushd $HOME/.dotfiles
-STOW_FOLDERS="nvim zsh personal tmux"
-for folder in $STOW_FOLDERS; do
-	stow -D $folder
-	stow $folder
+pushd $DOTFILES
+for folder in $(echo $STOW_PKGS | sed "s/,/ /g")
+do
+    stow -D $folder
+    stow $folder
 done
+popd

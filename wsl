@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+if [[ -z $STOW_PKGS ]]; then
+    STOW_PKGS="zsh"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+
+STOW_PKGS=$STOW_PKGS DOTFILES=$DOTFILES $DOTFILES/install

@@ -1,30 +1,4 @@
+export XDG_CONFIG_HOME=$HOME/.config
+export DOTFILES=$HOME/.dotfiles
 export EDITOR=nvim
-
-alias vim=nvim
-alias ls="ls --color=auto"
-alias k=kubectl
-alias b=bazelisk
-alias g=git
-alias gp="git push"
-alias gpf="git push --force-with-lease"
-
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000000
-SAVEHIST=10000000
-setopt INC_APPEND_HISTORY_TIME 
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt hist_ignore_space
-
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
-}
-zle -N fzf-history fh
-bindkey ^r fzf-history
-
-unameS="$(uname -s)"
-case "$unameS" in
-	Linux*)
-		bindkey "^[[1;3C" forward-word
-		bindkey "^[[1;3D" backward-word
-esac
+export STOW_PKGS="zsh"
