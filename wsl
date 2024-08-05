@@ -7,4 +7,5 @@ if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/.dotfiles
 fi
 
+git submodule init && git submodule update
 STOW_PKGS=$STOW_PKGS DOTFILES=$DOTFILES $DOTFILES/install
