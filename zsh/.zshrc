@@ -66,3 +66,10 @@ alias gcm='git checkout master'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+unameS="$(uname -s)"
+case "$unameS" in
+	Linux*)
+		bindkey "^[[1;3C" forward-word
+		bindkey "^[[1;3D" backward-word
+esac
