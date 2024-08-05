@@ -1,4 +1,4 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/.dotfiles
 export EDITOR=nvim
-export STOW_PKGS="zsh"
+export STOW_PKGS="zsh,nvim"
