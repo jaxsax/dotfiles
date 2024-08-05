@@ -6,6 +6,7 @@ with import <nixpkgs>{}; [
 	fzf
 	zoxide
 	oh-my-posh
+	neovim
 ]
 EOF
 
