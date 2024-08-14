@@ -1,1 +1,2 @@
 export STOW_PKGS="zsh,nvim,base,personal"
+export PATH="$HOME/bin:$PATH"
