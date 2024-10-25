@@ -2,6 +2,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$HOME/.dotfiles
 export EDITOR=nvim
 
+export LANG=en_US.UTF-8
+
 PERSONAL=$XDG_CONFIG_HOME/personal
 source $PERSONAL/env
 for i in `find -L $PERSONAL`; do

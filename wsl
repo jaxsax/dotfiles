@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+
+set -xe
+
 if [[ -z $STOW_PKGS ]]; then
     STOW_PKGS="zsh,nvim,base"
 fi
