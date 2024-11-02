@@ -1,2 +1,6 @@
 export STOW_PKGS="zsh,nvim,base,personal"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.please/bin:$HOME/bin:$PATH"
+
+if [[ -x "$(command -v plz)" ]]; then
+	source <(plz --completion_script)
+fi
