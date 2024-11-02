@@ -4,6 +4,7 @@ export EDITOR=nvim
 
 export LANG=en_US.UTF-8
 
+set -o emacs
 PERSONAL=$XDG_CONFIG_HOME/personal
 source $PERSONAL/env
 for i in `find -L $PERSONAL`; do

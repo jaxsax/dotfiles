@@ -74,3 +74,10 @@ case "$unameS" in
 		bindkey "^[[1;3C" forward-word
 		bindkey "^[[1;3D" backward-word
 esac
+
+tps="$TERM_PROGRAM"
+case "$tps" in
+	vscode)
+		bindkey "^[[1;5C" forward-word
+		bindkey "^[[1;5D" backward-word
+esac
