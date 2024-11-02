@@ -19,6 +19,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Load completions
 autoload -Uz compinit && compinit
 
+autoload -U select-word-style
+select-word-style bash
+
 # Add in zsh plugins
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
