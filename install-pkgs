@@ -8,6 +8,14 @@ with import <nixpkgs>{}; [
 	oh-my-posh
 	neovim
 	stow
+	kubectl
+	kubernetes-helm
+	go-task
+	kustomize
+	sops
+	vault
+	k9s
+	watchexec
 ]
 EOF
 
