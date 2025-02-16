@@ -37,33 +37,40 @@
           # Specifies things to pin in the flake registry and in NIX_PATH.
           pinned = { nixpkgs = toString nixpkgs; };
           paths = with pkgs; [
-            ripgrep
             nix
+
+            # tools
+            ripgrep
             fzf
-            zoxide
-            oh-my-posh
             neovim
             stow
+            jq
+            graphviz
+            direnv
+            btop
+            socat
+
+            # shell
+            zoxide
+            oh-my-posh
+
+            # ops
             kubectl
             kubernetes-helm
-            go-task
             kustomize
-            sops
             k9s
-            watchexec
             kind
             docker
             docker-compose
             docker-credential-helpers
+            sops
             kubectl
-            htop
+            
+            # dev
+            watchexec
             watch
-            jetbrains-mono
-            jq
-            graphviz
             iredis
             jetbrains-mono
-            direnv
             duckdb
           ];
         };
