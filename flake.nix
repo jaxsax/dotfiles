@@ -38,6 +38,7 @@
           pinned = { nixpkgs = toString nixpkgs; };
           paths = with pkgs; [
             ripgrep
+            nix
             fzf
             zoxide
             oh-my-posh
@@ -58,7 +59,6 @@
             htop
             watch
             jetbrains-mono
-            colima
             jq
             graphviz
             iredis
