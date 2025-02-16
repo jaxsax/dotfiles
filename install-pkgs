@@ -1,22 +1,3 @@
 #!/usr/bin/env bash
 
-cat <<EOF > /tmp/install-pkgs.nix
-with import <nixpkgs>{}; [
-	ripgrep
-	fzf
-	zoxide
-	oh-my-posh
-	neovim
-	stow
-	kubectl
-	kubernetes-helm
-	go-task
-	kustomize
-	sops
-	vault
-	k9s
-	watchexec
-]
-EOF
-
-nix-env -if /tmp/install-pkgs.nix 
+nix run .#profile.switch
