@@ -52,6 +52,8 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+setopt autocd
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -84,3 +86,13 @@ case "$tps" in
 		bindkey "^[[1;5C" forward-word
 		bindkey "^[[1;5D" backward-word
 esac
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/root/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/root/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/root/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/root/bin/google-cloud-sdk/completion.zsh.inc'; fi

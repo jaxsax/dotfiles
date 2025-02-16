@@ -1,6 +1,14 @@
 export STOW_PKGS="zsh,nvim,base,personal"
-export PATH="$HOME/.please/bin:$HOME/bin:$PATH"
+export PATH="$HOME/go/bin:$HOME/.please/bin:$HOME/bin:$PATH"
+
+alias b=bazelisk
 
 if [[ -x "$(command -v plz)" ]]; then
 	source <(plz --completion_script)
 fi
+
+export PNPM_HOME="/root/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
