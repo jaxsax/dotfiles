@@ -72,6 +72,10 @@
             iredis
             jetbrains-mono
             duckdb
+            apko
+            postgresql_17
+            restic
+            elixir_1_18
           ];
         };
       });
