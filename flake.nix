@@ -65,6 +65,7 @@
             docker-credential-helpers
             sops
             kubectl
+            just
             
             # dev
             watchexec
