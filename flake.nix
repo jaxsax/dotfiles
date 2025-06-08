@@ -77,6 +77,7 @@
             postgresql_17
             restic
             elixir_1_18
+            go_1_24
           ];
         };
       });
