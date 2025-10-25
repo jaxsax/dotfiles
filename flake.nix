@@ -7,7 +7,7 @@
 
   inputs = {
     flakey-profile.url = "github:lf-/flakey-profile";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/c4407ede1c1c41038b9f3d20f51271bc262dbae7";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -49,6 +49,8 @@
             direnv
             btop
             socat
+            lua
+            luajitPackages.luarocks
 
             # shell
             zoxide
@@ -70,7 +72,6 @@
             # dev
             watchexec
             watch
-            iredis
             jetbrains-mono
             duckdb
             apko
