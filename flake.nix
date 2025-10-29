@@ -45,6 +45,7 @@
             neovim
             stow
             jq
+            yq
             graphviz
             direnv
             btop
